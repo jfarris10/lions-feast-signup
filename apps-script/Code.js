@@ -15,6 +15,7 @@ var DESCRIPTION = [
 var SEED_SLOTS = [
   ['Volunteer', 'Set Up Volunteers', '09:00', '09:30', 4, 'Help arrange tables, chairs, and food stations before the feast'],
   ['Volunteer', 'Decorating Volunteers', '09:00', '09:30', 2, 'Help decorate the space with festive Thanksgiving decorations and set up crafts'],
+  ['Volunteer', 'Helper', '10:30', '11:30', 4, 'Help with food, kids crafts, etc'],
   ['Volunteer', 'Clean up Volunteers', '11:30', '12:15', 4, 'Help clean up tables, decorations, and leftover food after the feast'],
   ['Bring something', 'Fresh Fruit Platter', '09:00', '09:30', 4, ''],
   ['Bring something', 'Mini Muffins', '09:00', '09:30', 2, '2 packages of a dozen or enough for both Lion classes'],
@@ -309,6 +310,16 @@ function admin_(body) {
     var t = findByToken_(body.token);
     if (!t) return { ok: false, error: 'not_found' };
     setCell_(t.row, body.field, body.field === 'timestamp' ? new Date(body.value) : body.value);
+    return { ok: true };
+  }
+  if (body.op === 'addSlot') {
+    var n = body.slot || {};
+    if (!n.slotId || !n.name || !n.start || !n.end || !(Number(n.qty) > 0)) return { ok: false, error: 'bad_slot' };
+    if (readSlots_().some(function (x) { return x.slotId === String(n.slotId); })) return { ok: false, error: 'exists' };
+    var date = readEvent_().date;
+    var slotSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(TABS.slots);
+    slotSheet.appendRow([String(n.slotId), Number(n.order), n.section, n.name, pacific_(date, n.start), pacific_(date, n.end), Number(n.qty), n.note || '']);
+    slotSheet.getRange(slotSheet.getLastRow(), 5, 1, 2).setNumberFormat('yyyy-mm-dd h:mm am/pm');
     return { ok: true };
   }
   if (body.op === 'quota') return { ok: true, remaining: MailApp.getRemainingDailyQuota() };
