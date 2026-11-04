@@ -48,7 +48,7 @@ function setup(force) {
     ['timezone', 'America/Los_Angeles'],
     ['description', DESCRIPTION],
     ['headerPills', 'Thu, Nov 19|Setup 9:00 am'],
-    ['alertEmails', 'farris.justin@gmail.com,ingrid.a.farris@gmail.com'],
+    ['alertEmails', 'farris.justin@gmail.com'], // go-live adds ingrid.a.farris@gmail.com
     ['reminderDaysBefore', 3],
     ['reminderHour', 8],
     ['publicUrl', '']

@@ -1,0 +1,8 @@
+{
+  "scriptId": "11uvcuKUz917OrXOOAhLoDjRznUcfcugHsf68b2R4gh8sWd96r405_qgN",
+  "rootDir": "",
+  "parentId": "1ZL5AVKxa0NmJX7NBWmFUmgSt2qtpUz6NSSB_0WUJ2Pk",
+  "scriptExtensions": [".js", ".gs"],
+  "jsonExtensions": [".json"],
+  "filePushOrder": ["Secrets.js", "Logic.js", "Code.js"]
+}
