@@ -302,6 +302,13 @@ function admin_(body) {
     rows.forEach(function (r) { signupSheet_().deleteRow(r); });
     return { ok: true, deleted: rows.length };
   }
+  if (body.op === 'setSignupField') {
+    if (SIGNUP_HEADERS.indexOf(body.field) < 0) return { ok: false, error: 'bad_field' };
+    var t = findByToken_(body.token);
+    if (!t) return { ok: false, error: 'not_found' };
+    setCell_(t.row, body.field, body.field === 'timestamp' ? new Date(body.value) : body.value);
+    return { ok: true };
+  }
   if (body.op === 'dump') return { ok: true, event: readEvent_(), signups: readSignups_() };
   return { ok: false, error: 'unknown_op' };
 }
