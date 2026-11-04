@@ -1,0 +1,83 @@
+<h2>Warm &amp; festive, header v3</h2>
+<p class="subtitle">Header re-centered: lion, class name, title, date pills, short blurb. Leaf removed.</p>
+
+<style>
+  .phone{width:340px;margin:0 auto;border-radius:28px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.18);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;line-height:1.35}
+  .phone *{box-sizing:border-box}
+  .row{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;margin-bottom:8px}
+  .grow{flex:1;min-width:0}
+  .t{font-weight:600}
+  .s{font-size:12.5px;opacity:.75;margin-top:2px}
+  .pill{font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:99px;white-space:nowrap}
+  .btn{font-size:13px;font-weight:600;padding:8px 12px;border-radius:10px;border:0;white-space:nowrap}
+  .link{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;font-weight:600;margin-top:6px;text-decoration:none}
+  .sec{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:16px 4px 8px}
+  .bar{height:5px;border-radius:9px;margin-top:6px;overflow:hidden}
+  .bar>i{display:block;height:100%}
+
+  /* A — warm fall, echoes current theme */
+  .a{background:#FBF3DC;color:#4A1A06}
+  .a .hero{background:#B5471B;color:#FFF6E6;padding:22px 18px 18px}
+  .a .hero h1{font-family:Georgia,serif;font-size:24px;margin:0 0 4px}
+  .a .body{padding:4px 12px 16px}
+  .a .row{background:#fff;border:1px solid #F0DDB0}
+  .a .pill{background:#FDE7C2;color:#8A3A10}
+  .a .btn{background:#B5471B;color:#fff}
+  .a .link{color:#B5471B}
+  .a .bar{background:#F4E2BC}.a .bar>i{background:#D9822B}
+  .a .sec{color:#8A3A10}
+
+  /* B — clean neutral modern */
+  .b{background:#F6F7F9;color:#16181D}
+  .b .hero{background:#fff;padding:22px 18px 16px;border-bottom:1px solid #E6E8EC}
+  .b .hero h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px}
+  .b .chip{display:inline-block;font-size:12px;background:#EEF0FF;color:#3B43D6;padding:4px 9px;border-radius:99px;margin-right:6px;font-weight:600}
+  .b .body{padding:4px 12px 16px}
+  .b .row{background:#fff;box-shadow:0 1px 2px rgba(16,24,40,.06)}
+  .b .pill{background:#F1F2F4;color:#4B5160}
+  .b .btn{background:#16181D;color:#fff}
+  .b .link{color:#3B43D6}
+  .b .bar{background:#EDEEF1}.b .bar>i{background:#3B43D6}
+  .b .sec{color:#6B7180}
+</style>
+
+<div class="cards" style="max-width:420px;margin:0 auto">
+  <div class="card" data-choice="warm" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:18px;background:#eee">
+      <div class="phone a">
+        <div class="hero" style="text-align:center;padding:24px 22px 22px">
+          <svg width="76" height="76" viewBox="0 0 100 100" aria-hidden="true" style="display:block;margin:0 auto 10px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.18))">
+<circle cx="50" cy="52" r="40" fill="#E9963A"/><g fill="#D07A24"><circle cx="86.0" cy="52.0" r="11"/><circle cx="81.2" cy="70.0" r="11"/><circle cx="68.0" cy="83.2" r="11"/><circle cx="50.0" cy="88.0" r="11"/><circle cx="32.0" cy="83.2" r="11"/><circle cx="18.8" cy="70.0" r="11"/><circle cx="14.0" cy="52.0" r="11"/><circle cx="18.8" cy="34.0" r="11"/><circle cx="32.0" cy="20.8" r="11"/><circle cx="50.0" cy="16.0" r="11"/><circle cx="68.0" cy="20.8" r="11"/><circle cx="81.2" cy="34.0" r="11"/></g>
+<circle cx="24" cy="30" r="9" fill="#F6C46B"/><circle cx="76" cy="30" r="9" fill="#F6C46B"/>
+<circle cx="24" cy="30" r="4.5" fill="#E9963A"/><circle cx="76" cy="30" r="4.5" fill="#E9963A"/>
+<circle cx="50" cy="54" r="27" fill="#F6C46B"/>
+<ellipse cx="40" cy="50" rx="3.4" ry="4.2" fill="#4A1A06"/><ellipse cx="60" cy="50" rx="3.4" ry="4.2" fill="#4A1A06"/>
+<circle cx="41.2" cy="48.6" r="1.2" fill="#fff"/><circle cx="61.2" cy="48.6" r="1.2" fill="#fff"/>
+<ellipse cx="33" cy="60" rx="4.5" ry="3" fill="#F29C8A" opacity=".7"/><ellipse cx="67" cy="60" rx="4.5" ry="3" fill="#F29C8A" opacity=".7"/>
+<ellipse cx="50" cy="63" rx="9" ry="6.5" fill="#FBE3B0"/><path d="M46 59.5 h8 l-4 4 z" fill="#7A3410"/>
+<path d="M50 63.5 v2.5 M50 66 q-3.5 3 -6 0 M50 66 q3.5 3 6 0" stroke="#7A3410" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+</svg>
+          <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.8;font-weight:600">First Lutheran Lions</div>
+          <h1 style="margin:4px 0 12px">Lion's Friendship Feast</h1>
+          <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap">
+            <span style="background:rgba(255,246,230,.18);border:1px solid rgba(255,246,230,.35);padding:5px 11px;border-radius:99px;font-size:12.5px;font-weight:600">Thu, Nov 19</span>
+            <span style="background:rgba(255,246,230,.18);border:1px solid rgba(255,246,230,.35);padding:5px 11px;border-radius:99px;font-size:12.5px;font-weight:600">Setup 9:00 am</span>
+          </div>
+          <p style="font-size:13px;margin:14px auto 0;max-width:260px;opacity:.92">Help make our Thanksgiving Feast special! About 40 kids across both Lion classes.</p>
+        </div>
+        <div class="body">
+          <div class="sec">Volunteer</div>
+          <div class="row"><div class="grow"><div class="t">Set Up</div><div class="s">9:00–9:30 · tables, chairs, food stations</div><div class="bar"><i style="width:50%"></i></div><div class="s">2 of 4 · Sarah K., Mike R.</div></div><button class="btn">Sign up</button></div>
+          <div class="row"><div class="grow"><div class="t">Clean Up</div><div class="s">11:30–12:15</div><div class="bar"><i style="width:0"></i></div><div class="s">0 of 4</div></div><button class="btn">Sign up</button></div>
+          <div class="sec">Bring something</div>
+          <div class="row"><div class="grow"><div class="t">Juice Boxes</div><div class="s">Pack of 10 or enough for ~40 kids</div></div><span class="pill">1 of 2 left</span></div>
+          <div class="row"><div class="grow"><div class="t">Craft kit</div><div class="s">Bring to the Feast, or similar item</div><a class="link" href="#">View on Amazon ↗</a></div><button class="btn">Sign up</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body"><h3>A · Warm & festive</h3><p>Keeps the fall colors parents already know from the current page. Serif title, more personality.</p></div>
+  </div>
+
+  </div>
+
+<p class="subtitle" style="margin-top:18px">Names shown ("Sarah K.") are placeholders to show how filled slots look. All slots are actually open right now.</p>
