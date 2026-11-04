@@ -48,6 +48,25 @@ function reminderTargets(signups, windowStart, now) {
   });
 }
 
+// Owner alerts are nice-to-have (owners have the Sheet); keep a reserve of daily mail quota for parents.
+var MAIL_RESERVE = 10;
+
+function canSendOwnerAlert(remainingQuota, recipientCount) {
+  return remainingQuota - recipientCount >= MAIL_RESERVE;
+}
+
+// send(s) returns true on success; false or a throw means failed (left unstamped so the next run retries).
+function runReminders(targets, send) {
+  var sent = [], failed = [];
+  targets.forEach(function (s) {
+    var ok = false;
+    try { ok = send(s) === true; } catch (e) { ok = false; }
+    (ok ? sent : failed).push(s);
+  });
+  return { sent: sent, failed: failed };
+}
+
 if (typeof module !== 'undefined') {
-  module.exports = { displayName, validateSignup, sheetSafe, countFilled, hasCapacity, cancelCheck, reminderTargets };
+  module.exports = { displayName, validateSignup, sheetSafe, countFilled, hasCapacity, cancelCheck, reminderTargets,
+    canSendOwnerAlert, runReminders };
 }

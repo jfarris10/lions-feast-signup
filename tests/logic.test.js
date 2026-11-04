@@ -78,3 +78,21 @@ test('reminderTargets: excludes late, cancelled, already reminded', () => {
     []
   );
 });
+
+test('canSendOwnerAlert keeps a reserve for parent emails', () => {
+  assert.equal(L.canSendOwnerAlert(100, 2), true);
+  assert.equal(L.canSendOwnerAlert(12, 2), true);
+  assert.equal(L.canSendOwnerAlert(11, 2), false);
+  assert.equal(L.canSendOwnerAlert(0, 2), false);
+});
+
+test('runReminders only reports successful sends (failures retry next run)', () => {
+  const a = { token: 'a' }, b = { token: 'b' }, c = { token: 'c' };
+  const send = (s) => {
+    if (s.token === 'b') throw new Error('quota');
+    return s.token !== 'c';
+  };
+  const r = L.runReminders([a, b, c], send);
+  assert.deepEqual(r.sent, [a]);
+  assert.deepEqual(r.failed, [b, c]);
+});

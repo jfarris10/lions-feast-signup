@@ -269,17 +269,19 @@ function sendReminders() {
   var signups = readSignups_();
   var slots = readSlots_();
   var targets = reminderTargets(signups, windowStart, now);
-  targets.forEach(function (s) {
+  var result = runReminders(targets, function (s) {
     var slot = slots.filter(function (x) { return x.slotId === s.slotId; })[0];
-    if (!slot) return;
-    safeMail_(function () { mailReminder_(ev, slot, s); });
-    setCell_(s.row, 'reminderSentAt', new Date());
+    if (!slot) return false;
+    mailReminder_(ev, slot, s);
+    return true;
   });
+  result.sent.forEach(function (s) { setCell_(s.row, 'reminderSentAt', new Date()); });
+  if (result.failed.length) console.error('reminders failed (will retry next run): ' + result.failed.length);
   // Late signups (after the window opened) never get a reminder.
   signups.forEach(function (s) {
     if (s.status === 'active' && !s.reminderSentAt && new Date(s.timestamp) >= windowStart) setCell_(s.row, 'reminderSentAt', 'skipped');
   });
-  return targets.length;
+  return result.sent.length;
 }
 
 // ---------- Admin (key-protected, used for testing and go-live) ----------
@@ -309,6 +311,7 @@ function admin_(body) {
     setCell_(t.row, body.field, body.field === 'timestamp' ? new Date(body.value) : body.value);
     return { ok: true };
   }
+  if (body.op === 'quota') return { ok: true, remaining: MailApp.getRemainingDailyQuota() };
   if (body.op === 'dump') return { ok: true, event: readEvent_(), signups: readSignups_() };
   return { ok: false, error: 'unknown_op' };
 }
@@ -396,6 +399,11 @@ function mailReminder_(ev, slot, s) {
 
 function mailOwners_(ev, subject, text) {
   if (!ev.alertList.length) return;
+  var remaining = MailApp.getRemainingDailyQuota();
+  if (!canSendOwnerAlert(remaining, ev.alertList.length)) {
+    console.warn('owner alert skipped to save quota for parents (remaining ' + remaining + '): ' + subject);
+    return;
+  }
   var link = String(ev.publicUrl || '');
   var sheetUrl = SpreadsheetApp.getActiveSpreadsheet().getUrl();
   var full = text + '\n\nSheet: ' + sheetUrl + (link ? '\nSignup page: ' + link : '');
