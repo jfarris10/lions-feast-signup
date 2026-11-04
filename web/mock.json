@@ -1,0 +1,177 @@
+{
+ "ok": true,
+ "event": {
+  "title": "Lion's Friendship Feast",
+  "group": "First Lutheran Lions",
+  "description": "We need your help making our Thanksgiving Feast special! We are looking for parent volunteers to help with setup, decorating, clean-up, and bringing food to share. Every little bit helps!\n\nSet up: starts at 9 am right after drop off ~9-9:30 am\n\nVolunteer: during feast to help students with crafts and food serving etc.\n\nClean up: after feast ends, students will head back to classrooms and we need help putting away tables, food, decor, cleaning up crafts etc.",
+  "headerPills": [
+   "Thu, Nov 19",
+   "Setup 9:00 am"
+  ],
+  "timezone": "America/Los_Angeles",
+  "date": "2026-11-19"
+ },
+ "slots": [
+  {
+   "slotId": "1",
+   "order": 1,
+   "section": "Volunteer",
+   "name": "Set Up Volunteers",
+   "start": "2026-11-19T17:00:00.000Z",
+   "end": "2026-11-19T17:30:00.000Z",
+   "qty": 4,
+   "note": "Help arrange tables, chairs, and food stations before the feast",
+   "filled": 2,
+   "names": [
+    "Sarah K.",
+    "Mike R."
+   ]
+  },
+  {
+   "slotId": "2",
+   "order": 2,
+   "section": "Volunteer",
+   "name": "Decorating Volunteers",
+   "start": "2026-11-19T17:00:00.000Z",
+   "end": "2026-11-19T17:30:00.000Z",
+   "qty": 2,
+   "note": "Help decorate the space with festive Thanksgiving decorations and set up crafts",
+   "filled": 0,
+   "names": []
+  },
+  {
+   "slotId": "3",
+   "order": 3,
+   "section": "Volunteer",
+   "name": "Clean up Volunteers",
+   "start": "2026-11-19T19:30:00.000Z",
+   "end": "2026-11-19T20:15:00.000Z",
+   "qty": 4,
+   "note": "Help clean up tables, decorations, and leftover food after the feast",
+   "filled": 0,
+   "names": []
+  },
+  {
+   "slotId": "4",
+   "order": 4,
+   "section": "Bring something",
+   "name": "Fresh Fruit Platter",
+   "start": "2026-11-19T17:00:00.000Z",
+   "end": "2026-11-19T17:30:00.000Z",
+   "qty": 4,
+   "note": "",
+   "filled": 0,
+   "names": []
+  },
+  {
+   "slotId": "5",
+   "order": 5,
+   "section": "Bring something",
+   "name": "Mini Muffins",
+   "start": "2026-11-19T17:00:00.000Z",
+   "end": "2026-11-19T17:30:00.000Z",
+   "qty": 2,
+   "note": "2 packages of a dozen or enough for both Lion classes",
+   "filled": 0,
+   "names": []
+  },
+  {
+   "slotId": "6",
+   "order": 6,
+   "section": "Bring something",
+   "name": "Goldfish, Pretzels, or other Kid friendly snacks",
+   "start": "2026-11-19T17:00:00.000Z",
+   "end": "2026-11-19T17:30:00.000Z",
+   "qty": 2,
+   "note": "individual ~ 30 packs or bulk package",
+   "filled": 0,
+   "names": []
+  },
+  {
+   "slotId": "7",
+   "order": 7,
+   "section": "Bring something",
+   "name": "Napkins",
+   "start": "2026-11-19T17:00:00.000Z",
+   "end": "2026-11-19T17:30:00.000Z",
+   "qty": 1,
+   "note": "Festive Fall Napkins, enough for 40 students",
+   "filled": 0,
+   "names": []
+  },
+  {
+   "slotId": "8",
+   "order": 8,
+   "section": "Bring something",
+   "name": "Plates",
+   "start": "2026-11-19T17:00:00.000Z",
+   "end": "2026-11-19T17:30:00.000Z",
+   "qty": 1,
+   "note": "Festive plates enough for 40 students",
+   "filled": 1,
+   "names": [
+    "Dana <b>L.</b>"
+   ]
+  },
+  {
+   "slotId": "9",
+   "order": 9,
+   "section": "Bring something",
+   "name": "Juice Boxes",
+   "start": "2026-11-19T17:00:00.000Z",
+   "end": "2026-11-19T17:30:00.000Z",
+   "qty": 2,
+   "note": "pack of 10 or enough for ~40 kids",
+   "filled": 0,
+   "names": []
+  },
+  {
+   "slotId": "10",
+   "order": 10,
+   "section": "Bring something",
+   "name": "Cookies or other treats",
+   "start": "2026-11-19T17:00:00.000Z",
+   "end": "2026-11-19T17:30:00.000Z",
+   "qty": 2,
+   "note": "no nuts",
+   "filled": 0,
+   "names": []
+  },
+  {
+   "slotId": "11",
+   "order": 11,
+   "section": "Bring something",
+   "name": "Crafts",
+   "start": "2026-11-19T17:00:00.000Z",
+   "end": "2026-11-19T17:30:00.000Z",
+   "qty": 1,
+   "note": "Purchase on Amazon or similar product https://a.co/d/079xC8nI",
+   "filled": 0,
+   "names": []
+  },
+  {
+   "slotId": "12",
+   "order": 12,
+   "section": "Bring something",
+   "name": "Craft",
+   "start": "2026-11-19T17:00:00.000Z",
+   "end": "2026-11-19T17:30:00.000Z",
+   "qty": 1,
+   "note": "Purchase on Amazon or similar item and bring to Feast https://a.co/d/004LmA8E",
+   "filled": 0,
+   "names": []
+  },
+  {
+   "slotId": "13",
+   "order": 13,
+   "section": "Bring something",
+   "name": "Craft",
+   "start": "2026-11-19T17:00:00.000Z",
+   "end": "2026-11-19T17:30:00.000Z",
+   "qty": 1,
+   "note": "Purchase on Amazon or something similar https://a.co/d/0gzBalyh",
+   "filled": 0,
+   "names": []
+  }
+ ]
+}

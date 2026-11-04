@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lion's Friendship Feast</title>
+<meta name="description" content="Sign up to help with the First Lutheran Lions Friendship Feast.">
+<meta name="theme-color" content="#B5471B">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦁</text></svg>">
+<style>
+  :root{
+    --bg:#FBF3DC; --rust:#B5471B; --rust-d:#963915; --ink:#4A1A06; --ink-2:#7A4A30;
+    --card:#fff; --line:#F0DDB0; --gold:#D9822B; --gold-l:#F4E2BC; --pill:#FDE7C2; --pill-ink:#8A3A10;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--rust)}
+  .wrap{max-width:560px;margin:0 auto}
+
+  /* Header */
+  .hero{background:var(--rust);color:#FFF6E6;text-align:center;padding:28px 22px 26px;padding-top:max(28px,env(safe-area-inset-top))}
+  .hero svg{display:block;margin:0 auto 12px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.18))}
+  .group{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.82;font-weight:600}
+  .hero h1{font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1.15;margin:6px 0 14px;font-weight:700}
+  .pills{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+  .pills span{background:rgba(255,246,230,.18);border:1px solid rgba(255,246,230,.35);padding:6px 12px;border-radius:99px;font-size:13.5px;font-weight:600}
+  .blurb{font-size:15px;margin:16px auto 0;max-width:340px;opacity:.94}
+  details.more{margin:12px auto 0;max-width:380px;text-align:left;font-size:14.5px}
+  details.more summary{cursor:pointer;text-align:center;font-weight:600;opacity:.9;list-style:none;padding:6px}
+  details.more summary::-webkit-details-marker{display:none}
+  details.more summary::after{content:" ▾"}
+  details.more[open] summary::after{content:" ▴"}
+  details.more p{margin:8px 0;opacity:.94}
+
+  /* List */
+  main{padding:6px 14px 40px;padding-bottom:max(40px,env(safe-area-inset-bottom))}
+  .sec{font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--pill-ink);margin:22px 4px 10px}
+  .slot{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 14px 14px 16px;margin-bottom:10px}
+  .slot .grow{flex:1;min-width:0}
+  .slot .t{font-weight:650;font-size:16px}
+  .slot .s{font-size:14px;color:var(--ink-2);margin-top:2px;overflow-wrap:anywhere}
+  .slot .links{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:6px}
+  .slot .links a{font-size:14px;font-weight:650;text-decoration:none;display:inline-flex;align-items:center;min-height:32px}
+  .slot .links a:hover{text-decoration:underline}
+  .bar{height:6px;border-radius:9px;background:var(--gold-l);overflow:hidden;margin-top:8px}
+  .bar>i{display:block;height:100%;background:var(--gold);border-radius:9px}
+  .count{font-size:13px;color:var(--ink-2);margin-top:5px}
+  .btn{appearance:none;border:0;border-radius:12px;background:var(--rust);color:#fff;font:inherit;font-weight:650;font-size:15px;padding:0 16px;min-height:44px;cursor:pointer;white-space:nowrap}
+  .btn:hover{background:var(--rust-d)}
+  .btn:focus-visible,.slot a:focus-visible,.ghost:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+  .btn[disabled]{opacity:.6;cursor:default}
+  .full{font-size:13px;font-weight:700;padding:6px 12px;border-radius:99px;background:#EFE6D2;color:#8A7A66;white-space:nowrap}
+  .slot.is-full{background:#FFFCF4}
+  .slot.is-full .t{color:var(--ink-2)}
+  .ghost{appearance:none;background:none;border:0;color:var(--rust);font:inherit;font-weight:650;min-height:44px;padding:0 10px;cursor:pointer}
+  .notice{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-top:18px;text-align:center}
+  .notice h2{font-family:Georgia,serif;margin:0 0 8px;font-size:22px}
+  .notice p{margin:6px 0}
+  .stack{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+  footer{text-align:center;font-size:13px;color:var(--ink-2);padding:0 20px 30px}
+
+  /* Skeleton */
+  .sk{height:86px;border-radius:var(--radius);margin-bottom:10px;background:linear-gradient(90deg,#F6E9C8 0%,#FBF3DC 50%,#F6E9C8 100%);background-size:200% 100%;animation:sh 1.2s infinite linear}
+  @keyframes sh{to{background-position:-200% 0}}
+  @media (prefers-reduced-motion:reduce){.sk{animation:none}}
+
+  /* Sheet */
+  dialog{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;margin:0;color:var(--ink)}
+  dialog::backdrop{background:rgba(40,16,4,.45)}
+  .panel{position:fixed;left:0;right:0;bottom:0;background:#FFFDF7;border-radius:22px 22px 0 0;padding:10px 20px 22px;padding-bottom:max(22px,env(safe-area-inset-bottom));max-height:92vh;overflow:auto;box-shadow:0 -10px 40px rgba(0,0,0,.18);animation:up .22s ease-out}
+  .grab{width:40px;height:5px;border-radius:9px;background:#E5D5B5;margin:0 auto 14px}
+  @keyframes up{from{transform:translateY(40px)}}
+  @media (min-width:640px){
+    .panel{left:50%;top:50%;bottom:auto;right:auto;transform:translate(-50%,-50%);width:440px;border-radius:20px;animation:none}
+    .grab{display:none}
+  }
+  .panel h2{font-family:Georgia,serif;font-size:22px;margin:0}
+  .panel .when{color:var(--ink-2);font-size:14.5px;margin:4px 0 16px}
+  label{display:block;font-weight:650;font-size:14.5px;margin:12px 0 6px}
+  label .opt{font-weight:400;color:var(--ink-2)}
+  input,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid #E6D3AC;border-radius:12px;padding:12px 14px;min-height:48px}
+  textarea{min-height:80px;resize:vertical}
+  .err{color:#B3261E;font-weight:600;font-size:14.5px;margin:12px 0 0;min-height:1em}
+  .actions{display:flex;gap:10px;margin-top:16px}
+  .actions .btn{flex:1}
+  .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+  .ok{text-align:center;padding:10px 0 4px}
+  .ok .big{font-size:44px;line-height:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <svg width="84" height="84" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="52" r="40" fill="#E9963A"/><g fill="#D07A24"><circle cx="86.0" cy="52.0" r="11"/><circle cx="81.2" cy="70.0" r="11"/><circle cx="68.0" cy="83.2" r="11"/><circle cx="50.0" cy="88.0" r="11"/><circle cx="32.0" cy="83.2" r="11"/><circle cx="18.8" cy="70.0" r="11"/><circle cx="14.0" cy="52.0" r="11"/><circle cx="18.8" cy="34.0" r="11"/><circle cx="32.0" cy="20.8" r="11"/><circle cx="50.0" cy="16.0" r="11"/><circle cx="68.0" cy="20.8" r="11"/><circle cx="81.2" cy="34.0" r="11"/></g>
+      <circle cx="24" cy="30" r="9" fill="#F6C46B"/><circle cx="76" cy="30" r="9" fill="#F6C46B"/>
+      <circle cx="24" cy="30" r="4.5" fill="#E9963A"/><circle cx="76" cy="30" r="4.5" fill="#E9963A"/>
+      <circle cx="50" cy="54" r="27" fill="#F6C46B"/>
+      <ellipse cx="40" cy="50" rx="3.4" ry="4.2" fill="#4A1A06"/><ellipse cx="60" cy="50" rx="3.4" ry="4.2" fill="#4A1A06"/>
+      <circle cx="41.2" cy="48.6" r="1.2" fill="#fff"/><circle cx="61.2" cy="48.6" r="1.2" fill="#fff"/>
+      <ellipse cx="33" cy="60" rx="4.5" ry="3" fill="#F29C8A" opacity=".7"/><ellipse cx="67" cy="60" rx="4.5" ry="3" fill="#F29C8A" opacity=".7"/>
+      <ellipse cx="50" cy="63" rx="9" ry="6.5" fill="#FBE3B0"/><path d="M46 59.5 h8 l-4 4 z" fill="#7A3410"/>
+      <path d="M50 63.5 v2.5 M50 66 q-3.5 3 -6 0 M50 66 q3.5 3 6 0" stroke="#7A3410" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div class="group" id="group">First Lutheran Lions</div>
+    <h1 id="title">Lion's Friendship Feast</h1>
+    <div class="pills" id="pills"><span>Thu, Nov 19</span><span>Setup 9:00 am</span></div>
+    <p class="blurb" id="blurb"></p>
+    <details class="more" id="more" hidden><summary>More details</summary><div id="moreBody"></div></details>
+  </header>
+
+  <main id="main" aria-live="polite">
+    <div id="slots"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
+    <section id="cancel" hidden></section>
+  </main>
+  <footer>Questions? Reply to your confirmation email.</footer>
+</div>
+
+<dialog id="sheet" aria-labelledby="sheetTitle">
+  <div class="panel">
+    <div class="grab"></div>
+    <div id="formView">
+      <h2 id="sheetTitle"></h2>
+      <p class="when" id="sheetWhen"></p>
+      <form id="form" novalidate>
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" autocomplete="name" required maxlength="100">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+        <label for="f-comment">Comment <span class="opt">(optional)</span></label>
+        <textarea id="f-comment" name="comment" maxlength="500" placeholder="Anything Ingrid should know?"></textarea>
+        <div class="hp" aria-hidden="true"><label for="f-hp">Leave blank</label><input id="f-hp" name="hp" tabindex="-1" autocomplete="off"></div>
+        <p class="err" id="formErr" role="alert"></p>
+        <div class="actions">
+          <button type="button" class="ghost" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn" id="submitBtn">Sign up</button>
+        </div>
+      </form>
+    </div>
+    <div id="okView" class="ok" hidden>
+      <div class="big">🎉</div>
+      <h2>You're signed up!</h2>
+      <p class="when">Check your email for a confirmation.</p>
+      <div class="stack">
+        <button type="button" class="btn" id="againBtn">Sign up for something else</button>
+        <button type="button" class="ghost" id="doneBtn">Done</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script src="config.js"></script>
+<script src="render.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
